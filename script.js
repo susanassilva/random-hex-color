@@ -1,9 +1,12 @@
-let numbers = Math.random();
-console.log(numbers);
-numbers = numbers.toString(16);
-console.log(numbers);
-numbers = numbers.substring(2, 8);
-console.log(numbers);
+const hexacolor = document.querySelector("#hexacolor");
+const btn = document.getElementsByClassName("btn");
 
-color = '#' + numbers;
-console.log(color);
+const generateColor = () => {
+  const numbers = Math.random().toString(16);
+  const convertSubstring = numbers.substring(2,8);
+  const randomColor = "#"+convertSubstring;
+  document.body.style.backgroundColor = randomColor;
+  hexacolor.textContent = randomColor;
+};
+
+btn.addEventListener("click", generateColor());
